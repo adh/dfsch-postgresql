@@ -77,10 +77,10 @@ AC_ARG_WITH([pq],
   CPPFLAGS="$CPPFLAGS -I${withval}/include -I${withval}"
   LDFLAGS="$LDFLAGS -L${withval}/lib -L${withval}")
 
-AC_CHECK_HEADERS(libpq-fe.h, [have_pq="1"], [have_pq="0"])
+AC_CHECK_HEADERS(postgresql/libpq-fe.h, [have_pq="1"], [have_pq="0"])
 AC_CHECK_LIB(pq, PQconnectdb,, [have_pq="0"])
 
-if test x$have_dfsch != x1; then
+if test x$have_pq != x1; then
         AC_MSG_RESULT()
         AC_MSG_RESULT(****************************************************************)
         AC_MSG_RESULT(libpq not found!)

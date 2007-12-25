@@ -1,0 +1,4 @@
+2007-12-25  Ales Hakl  <ales at hakl dot net>
+
+	* src/postgres.c: libpq interface
+
