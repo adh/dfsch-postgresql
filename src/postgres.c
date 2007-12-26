@@ -13,8 +13,9 @@ typedef struct pg_conn_t {
 
 dfsch_type_t pg_conn_type = {
   DFSCH_STANDARD_TYPE,
+  NULL,
   sizeof(pg_conn_t),
-  "postgres:connection",
+  "pg:connection",
   NULL,
   NULL,
   NULL,
@@ -52,8 +53,9 @@ typedef struct pg_result_t {
 
 dfsch_type_t pg_result_type = {
   DFSCH_STANDARD_TYPE,
+  NULL,
   sizeof(pg_result_t),
-  "postgres:result",
+  "pg:result",
   NULL,
   NULL,
   NULL,
@@ -362,6 +364,10 @@ static dfsch_object_t* pg_close_result(void* baton,
 
 void dfsch_module_postgres_register(dfsch_object_t* env){
   dfsch_provide(env, "postgres");
+
+
+  dfsch_define_cstr(env, "pg:<connection>", &pg_conn_type);
+  dfsch_define_cstr(env, "pg:<result>", &pg_result_type);
 
   dfsch_define_cstr(env, "pg:connect", 
                     dfsch_make_primitive(pg_connect, NULL));

@@ -1,3 +1,7 @@
+2007-12-26  Ales Hakl  <ales at hakl dot net>
+
+	* src/postgres.c: updated for generic functions
+
 2007-12-25  Ales Hakl  <ales at hakl dot net>
 
 	* src/postgres.c: libpq interface
