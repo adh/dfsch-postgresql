@@ -1,3 +1,7 @@
+2008-04-05  Ales Hakl  <ales at hakl dot net>
+
+	* src/postgres.c: use DFSCH_TYPE_OF()
+
 2007-12-26  Ales Hakl  <ales at hakl dot net>
 
 	* src/postgres.c: updated for generic functions

@@ -30,7 +30,7 @@ static void conn_finalizer(pg_conn_t* conn, void* cd){
 }
 
 pg_conn_t* pg_conn(dfsch_object_t* conn){
-  if (!conn || conn->type != &pg_conn_type){
+  if (DFSCH_TYPE_OF(conn) != &pg_conn_type){
     dfsch_error("postgres:not-a-connection", conn);
   }
 
@@ -70,7 +70,7 @@ static void result_finalizer(pg_result_t* res, void* cd){
 }
 
 pg_result_t* pg_result(dfsch_object_t* res){
-  if (!res || res->type != &pg_result_type){
+  if (DFSCH_TYPE_OF(res) != &pg_result_type){
     dfsch_error("postgres:not-a-connection", res);
   }
 
